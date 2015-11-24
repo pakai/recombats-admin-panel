@@ -1,0 +1,30 @@
+<ol class="breadcrumb">
+  <li>
+    {{#link-to "index"}}Home{{/link-to}}
+  </li>
+  <li>
+    {{#link-to parentRouteName}}{{sectionName}}{{/link-to}}
+  </li>
+  <li class="active">{{item.name}}</li>
+</ol>
+
+<h3>{{item.name}}</h3>
+
+{{yield}}
+
+<form>
+  {{cave-element-edit-form-field value=item.type name='Type'}}
+  {{cave-element-edit-form-field value=item.aspect name='Aspect'}}
+  {{cave-element-edit-form-field value=item.level name='Level'}}
+  {{cave-element-edit-form-field value=item.map name='Map'}}
+  {{cave-element-edit-form-field value=item.align name='Align'}}
+  <div class="form-group row">
+    <label class="col-sm-2 form-control-label text-muted">Image</label>
+    <div class="col-sm-10">
+      <div>
+        <img src="{{item.image}}" class="img-thumbnail img-responsive" alt="{{item.name}}">
+      </div>
+      <small class="text-muted">{{item.img}}</small>
+    </div>
+  </div>
+</form>

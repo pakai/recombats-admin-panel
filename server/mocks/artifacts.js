@@ -18,11 +18,9 @@ module.exports = function(app) {
   });
 
   artifactsRouter.put('/:id', function(req, res) {
-    res.send({
-      'artifacts': items.find(function(item){
+    res.send(items.find(function(item){
         return item.id === req.params.id;
-      })
-    });
+      }));
   });
 
   artifactsRouter.delete('/:id', function(req, res) {

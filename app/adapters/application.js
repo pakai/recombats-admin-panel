@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 import ENV from 'recombats-admin-panel/config/environment';
 
-let adapter = DS.JSONAPIAdapter.extend({
+let adapter = DS.RESTAdapter.extend({
   namespace: 'api'
 });
 if ( /*true || */ ENV.environment === 'production') {

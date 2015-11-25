@@ -5,7 +5,11 @@ export default DS.Model.extend({
   type: DS.attr('number'),
   img: DS.attr('string'),
   aspect: DS.attr('number'),
-  image: Ember.computed('img', function() {
+  binaryImage: DS.attr('string'),
+  image: Ember.computed('img', function () {
     return `http://www.recombats.com${this.get('img')}`;
+  }),
+  freshImage: Ember.computed('image', function () {
+    return this.get('image') + '?no_cache=' + Date.now();
   })
 });

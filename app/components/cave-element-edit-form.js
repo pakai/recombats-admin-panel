@@ -11,7 +11,7 @@ export default Ember.Component.extend({
       reader.onload = (evt) => {
         this.item.set('binaryImage', evt.target.result);
         this.item.save().then(() => {
-          this.item.propertyDidChange('img');
+          this.item.notifyPropertyChange('img');
         });
       };
       reader.readAsBinaryString(imageFile);

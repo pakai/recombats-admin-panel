@@ -12,12 +12,12 @@
 
 {{yield}}
 
-<form>
-  {{cave-element-edit-form-field value=item.type name='Type'}}
-  {{cave-element-edit-form-field value=item.aspect name='Aspect'}}
-  {{cave-element-edit-form-field value=item.level name='Level'}}
-  {{cave-element-edit-form-field value=item.map name='Map'}}
-  {{cave-element-edit-form-field value=item.align name='Align'}}
+<form id='cave-element-edit-form'>
+  {{#cave-element-edit-form-field value=item.type name='Type' }}{{/cave-element-edit-form-field}}
+  {{#cave-element-edit-form-field value=item.aspect name='Aspect' }}{{/cave-element-edit-form-field}}
+  {{#cave-element-edit-form-field value=item.level name='Level' }}{{/cave-element-edit-form-field}}
+  {{#cave-element-edit-form-field value=item.map name='Map' }}{{/cave-element-edit-form-field}}
+  {{#cave-element-edit-form-field value=item.align name='Align' }}{{/cave-element-edit-form-field}}
   <div class="form-group row">
     <label class="col-sm-2 form-control-label text-muted">Image</label>
     <div class="col-sm-10">
@@ -27,5 +27,15 @@
       <small class="text-muted">{{item.img}}</small>
     </div>
   </div>
-  <button type="button" class="btn btn-primary-outline" {{action "save"}}>Save</button>
+  <div class="form-group row">
+    <label class="col-sm-2 form-control-label text-muted"></label>
+    <div class="col-sm-10">
+      <div>
+        <label class="file">
+          <input type="file" name='new-image' {{action "changeImage" on="change"}}>
+          <span class="file-custom"></span>
+        </label>
+      </div>
+    </div>
+  </div>
 </form>

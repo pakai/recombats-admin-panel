@@ -9,12 +9,16 @@ export default Ember.Component.extend({
 
       var reader = new FileReader();
       reader.onload = (evt) => {
-        this.item.set('binaryImage', evt.target.result);
+        let imageDataURL = evt.target.result,
+          //remove data url start like data:image/gif;base64,
+          //remove untill "," character
+          imagePureData =  imageDataURL.slice(imageDataURL.indexOf(',') + 1);
+        this.item.set('binaryImage', imagePureData);
         this.item.save().then(() => {
           this.item.notifyPropertyChange('img');
         });
       };
-      reader.readAsBinaryString(imageFile);
+      reader.readAsDataURL(imageFile);
     }
   }
 });

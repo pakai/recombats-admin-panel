@@ -21,7 +21,7 @@ module.exports = function(environment) {
       'default-src': "'none'",
       'img-src': "'self' *",
       'style-src': "'self' 'unsafe-inline'",
-      'connect-src': "'self' www.recombats.com"
+      'connect-src': "'self' www.recombats.com *"
     }
   };
 
@@ -46,7 +46,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.locatioPrefixType = 'hash';  
+    ENV.locatioPrefixType = 'hash';
   }
 
   return ENV;

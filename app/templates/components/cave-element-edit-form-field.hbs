@@ -1,8 +1,9 @@
-{{#if value}}
-  <div class="form-group row">
-    <label class="col-sm-2 form-control-label text-muted">{{name}}</label>
-    <div class="col-sm-10">
-      <p class="form-control-static">{{value}}</p>
+{{#if (get item field)}}
+    <div class="form-group row">
+        <label class="col-sm-2 form-control-label text-muted">{{label}}</label>
+
+        <div class="col-sm-10">
+          {{input value=(mut (get item field)) class="form-control"}}
+        </div>
     </div>
-  </div>
 {{/if}}

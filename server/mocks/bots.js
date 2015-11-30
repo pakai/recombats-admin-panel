@@ -18,11 +18,9 @@ module.exports = function(app) {
   });
 
   botsRouter.put('/:id', function(req, res) {
-    res.send({
-      'bots': {
-        id: req.params.id
-      }
-    });
+    res.send(items.find(function(item){
+        return item.id === req.params.id;
+      }));
   });
 
   botsRouter.delete('/:id', function(req, res) {

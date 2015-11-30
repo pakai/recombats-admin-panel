@@ -30,6 +30,9 @@ export default Ember.Component.extend({
           this.item.notifyPropertyChange('img');
         });
       }
+    },
+    save() {
+      this.item.save();
     }
   }
 });

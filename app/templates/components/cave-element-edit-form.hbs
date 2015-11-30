@@ -13,11 +13,11 @@
 {{yield}}
 
 <form id='cave-element-edit-form'>
-  {{#cave-element-edit-form-field value=item.type name='Type' }}{{/cave-element-edit-form-field}}
-  {{#cave-element-edit-form-field value=item.aspect name='Aspect' }}{{/cave-element-edit-form-field}}
-  {{#cave-element-edit-form-field value=item.level name='Level' }}{{/cave-element-edit-form-field}}
-  {{#cave-element-edit-form-field value=item.map name='Map' }}{{/cave-element-edit-form-field}}
-  {{#cave-element-edit-form-field value=item.align name='Align' }}{{/cave-element-edit-form-field}}
+  {{#cave-element-edit-form-field item=item field='type' label='Type' }}{{/cave-element-edit-form-field}}
+  {{#cave-element-edit-form-field item=item field='aspect' label='Aspect' }}{{/cave-element-edit-form-field}}
+  {{#cave-element-edit-form-field item=item field='level' label='Level' }}{{/cave-element-edit-form-field}}
+  {{#cave-element-edit-form-field item=item field='map' label='Map' }}{{/cave-element-edit-form-field}}
+  {{#cave-element-edit-form-field item=item field='align' label='Align' }}{{/cave-element-edit-form-field}}
     <div class="form-group row">
         <label class="col-sm-2 form-control-label text-muted">Image</label>
 
@@ -44,9 +44,11 @@
             <div class="input-group">
               {{input type="text" value=remoteImageURL class="form-control" placeholder="Insert image url to upload..."}}
                 <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button" {{action "uploadRemoteImage" remoteImageURL}}>Upload</button>
+                  <button class="btn btn-secondary" type="button" {{action "uploadRemoteImage" remoteImageURL}}>Upload
+                  </button>
                 </span>
             </div>
         </div>
     </div>
+    <button class="btn-primary-outline btn" {{action "save"}}>Save</button>
 </form>

@@ -2,6 +2,15 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   item: null,
+  parentRouteName: '',
+  sectionName: '',
+  accept: '',
+  isArtifact: Ember.computed('sectionName', function () {
+    return this.get('parentRouteName') === 'artifacts';
+  }),
+  isBot: Ember.computed('sectionName', function () {
+    return this.get('parentRouteName') === 'bots';
+  }),
   uploadImage: function (imageFile) {
     var reader = new FileReader();
     reader.onload = (evt) => {

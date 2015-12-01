@@ -13,12 +13,23 @@
 {{yield}}
 
 <form id='cave-element-edit-form'>
-  {{#cave-element-edit-form-field item=item field='name' label='Name' }}{{/cave-element-edit-form-field}}
-  {{#cave-element-edit-form-field item=item field='type' label='Type' }}{{/cave-element-edit-form-field}}
-  {{#cave-element-edit-form-field item=item field='aspect' label='Aspect' }}{{/cave-element-edit-form-field}}
-  {{#cave-element-edit-form-field item=item field='level' label='Level' }}{{/cave-element-edit-form-field}}
-  {{#cave-element-edit-form-field item=item field='map' label='Map' }}{{/cave-element-edit-form-field}}
-  {{#cave-element-edit-form-field item=item field='align' label='Align' }}{{/cave-element-edit-form-field}}
+  {{#cave-element-edit-form-field item=item field='name'}}{{/cave-element-edit-form-field}}
+  {{#cave-element-edit-form-field item=item field='type'}}{{/cave-element-edit-form-field}}
+  {{#if isArtifact}}
+    {{#cave-element-edit-form-field item=item field='aspect'}}{{/cave-element-edit-form-field}}
+  {{/if}}
+  {{#if isBot}}
+    {{#cave-element-edit-form-field item=item field='level'}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='map'}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='align'}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='hp'}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='stats' textarea=true}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='adds' textarea=true}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='priems'}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='sex'}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='clan'}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='izlom'}}{{/cave-element-edit-form-field}}
+  {{/if}}
     <div class="form-group row">
         <label class="col-sm-2 form-control-label text-muted">Image</label>
 

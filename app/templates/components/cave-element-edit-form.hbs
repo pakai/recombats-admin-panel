@@ -5,30 +5,36 @@
     <li>
       {{#link-to parentRouteName}}{{sectionName}}{{/link-to}}
     </li>
-    <li class="active">{{item.name}}</li>
+    <li class="active">
+      {{#if (get item 'isNew') }}
+          New
+      {{else}}
+        {{item.name}}
+      {{/if}}
+    </li>
 </ol>
 
 <h3>{{item.name}}</h3>
 
 {{yield}}
 
-<form id='cave-element-edit-form'>
-  {{#cave-element-edit-form-field item=item field='name'}}{{/cave-element-edit-form-field}}
-  {{#cave-element-edit-form-field item=item field='type'}}{{/cave-element-edit-form-field}}
+<form id='cave-element-edit-form' {{action "save" on="submit"}}>
+  {{#cave-element-edit-form-field item=item field='name' required="required"}}{{/cave-element-edit-form-field}}
+  {{#cave-element-edit-form-field item=item field='type' required="required"}}{{/cave-element-edit-form-field}}
   {{#if isArtifact}}
-    {{#cave-element-edit-form-field item=item field='aspect'}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='aspect' required="required" type="number"}}{{/cave-element-edit-form-field}}
   {{/if}}
   {{#if isBot}}
-    {{#cave-element-edit-form-field item=item field='level'}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='level' type="number"}}{{/cave-element-edit-form-field}}
     {{#cave-element-edit-form-field item=item field='map'}}{{/cave-element-edit-form-field}}
-    {{#cave-element-edit-form-field item=item field='align'}}{{/cave-element-edit-form-field}}
-    {{#cave-element-edit-form-field item=item field='hp'}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='align' type="number"}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='hp' type="number"}}{{/cave-element-edit-form-field}}
     {{#cave-element-edit-form-field item=item field='stats' textarea=true}}{{/cave-element-edit-form-field}}
     {{#cave-element-edit-form-field item=item field='adds' textarea=true}}{{/cave-element-edit-form-field}}
     {{#cave-element-edit-form-field item=item field='priems'}}{{/cave-element-edit-form-field}}
-    {{#cave-element-edit-form-field item=item field='sex'}}{{/cave-element-edit-form-field}}
-    {{#cave-element-edit-form-field item=item field='clan'}}{{/cave-element-edit-form-field}}
-    {{#cave-element-edit-form-field item=item field='izlom'}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='sex' type="number"}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='clan' type="number"}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='izlom' type="number"}}{{/cave-element-edit-form-field}}
   {{/if}}
     <div class="form-group row">
         <label class="col-sm-2 form-control-label text-muted">Image</label>
@@ -62,5 +68,6 @@
             </div>
         </div>
     </div>
-    <button class="btn-primary-outline btn" {{action "save"}}>Save</button>
+
+    <button class="btn-primary-outline btn">Save</button>
 </form>

@@ -58,10 +58,25 @@ if (/*true || */ ENV.environment === 'production') {
         return this.ajax(url, "POST", {
           data: data
         });
+      },
+      /**
+       Called by the store when a newly created record is
+       saved via the `save` method on a model record instance.
+       The `createRecord` method serializes the record and makes an Ajax (HTTP POST) request
+       to a URL computed by `buildURL`.
+       See `serialize` for information on how to customize the serialized form
+       of a record.
+       @method createRecord
+       @param {DS.Store} store
+       @param {DS.Model} type
+       @param {DS.Snapshot} snapshot
+       @return {Promise} promise
+       */
+      createRecord: function (store, type, snapshot) {
+        return this.updateRecord(store, type, snapshot);
       }
     }
-  )
-  ;
+  );
 }
 
 export default adapter;

@@ -1,11 +1,11 @@
 <div class="form-group row">
-    <label class="col-sm-2 form-control-label text-muted">{{caption}}</label>
+    <label class="col-sm-2 form-control-label text-muted">{{caption}}{{#if required}}<span class="text-danger">*</span>{{/if}}</label>
 
     <div class="col-sm-10">
       {{#if textarea}}
         {{textarea value=(mut (get item field)) cols="80" rows="4" class="form-control"}}
       {{else}}
-        {{input value=(mut (get item field)) class="form-control"}}
+        {{input value=(mut (get item field)) class="form-control" required=required type=type}}
       {{/if}}
     </div>
 </div>

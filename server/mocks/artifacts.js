@@ -8,7 +8,7 @@ module.exports = function(app) {
   });
 
   artifactsRouter.post('/', function(req, res) {
-    res.status(201).end();
+    res.status(201).send(Object.assign(items[0], {id: Date.now()}));
   });
 
   artifactsRouter.get('/:id', function(req, res) {

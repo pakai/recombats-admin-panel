@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('artifact', { path: '/artifact/:artifact_id' });
   this.route('bots');
   this.route('bot', { path: '/bot/:bot_id' });
+  this.route('new-artifact');
 });
 
 export default Router;

@@ -5,6 +5,7 @@ export default Ember.Component.extend({
   parentRouteName: '',
   sectionName: '',
   accept: '',
+  error: false,
   isArtifact: Ember.computed('sectionName', function () {
     return this.get('parentRouteName') === 'artifacts';
   }),
@@ -41,10 +42,14 @@ export default Ember.Component.extend({
       }
     },
     save() {
+      this.set('error', false);
+
       this.item.save().then(savedItem => {
         if (this.parentRouteName && savedItem) {
           this.container.lookup('controller:application').transitionToRoute(savedItem.get('constructor.modelName'), savedItem);
         }
+      }).catch(() => {
+        this.set('error', true);
       });
     }
   }

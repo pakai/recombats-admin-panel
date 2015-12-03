@@ -25,6 +25,9 @@
 {{yield}}
 
 <form id='cave-element-edit-form' {{action "save" on="submit"}}>
+  {{#if error}}
+    {{error-message}}
+  {{/if}}
   {{#cave-element-edit-form-field item=item field='name' required="required"}}{{/cave-element-edit-form-field}}
   {{#cave-element-edit-form-field item=item field='type' required="required"}}{{/cave-element-edit-form-field}}
   {{#if isArtifact}}
@@ -77,6 +80,10 @@
           </div>
       </div>
   {{/unless}}
+
+  {{#if error}}
+    {{error-message}}
+  {{/if}}
 
     <button class="btn-primary-outline btn">Save</button>
 </form>

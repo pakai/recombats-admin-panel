@@ -34,16 +34,16 @@
     {{#cave-element-edit-form-field item=item field='aspect' required="required" type="number"}}{{/cave-element-edit-form-field}}
   {{/if}}
   {{#if isBot}}
-    {{#cave-element-edit-form-field item=item field='level' type="number"}}{{/cave-element-edit-form-field}}
-    {{#cave-element-edit-form-field item=item field='map'}}{{/cave-element-edit-form-field}}
-    {{#cave-element-edit-form-field item=item field='align' type="number"}}{{/cave-element-edit-form-field}}
-    {{#cave-element-edit-form-field item=item field='hp' type="number"}}{{/cave-element-edit-form-field}}
-    {{#cave-element-edit-form-field item=item field='stats' textarea=true}}{{/cave-element-edit-form-field}}
-    {{#cave-element-edit-form-field item=item field='adds' textarea=true}}{{/cave-element-edit-form-field}}
-    {{#cave-element-edit-form-field item=item field='priems'}}{{/cave-element-edit-form-field}}
-    {{#cave-element-edit-form-field item=item field='sex' type="number"}}{{/cave-element-edit-form-field}}
-    {{#cave-element-edit-form-field item=item field='clan' type="number"}}{{/cave-element-edit-form-field}}
-    {{#cave-element-edit-form-field item=item field='izlom' type="number"}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='level' required="required" type="number"}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='map' required="required"}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='align' required="required" type="number"}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='hp' required="required" type="number"}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='stats' required="required" textarea=true}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='adds' required="required" textarea=true}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='priems' required="required"}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='sex' required="required" type="number"}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='clan' required="required" type="number"}}{{/cave-element-edit-form-field}}
+    {{#cave-element-edit-form-field item=item field='izlom' required="required" type="number"}}{{/cave-element-edit-form-field}}
   {{/if}}
 
   {{#unless (get item 'isNew') }}

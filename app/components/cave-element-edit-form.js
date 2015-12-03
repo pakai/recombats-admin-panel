@@ -41,7 +41,7 @@ export default Ember.Component.extend({
       }
     },
     save() {
-      this.item.save();
+      this.item.save().then(savedItem => this.sendAction('newItemSaved', savedItem));
     }
   }
 });

@@ -1,3 +1,5 @@
-{{filtered-list items=model modelName='bot' sectionName='Bots'}}
+{{#filtered-list items=model modelName='bot' sectionName='Bots'}}
+  {{#link-to "new-bot" class="btn btn-primary-outline pull-right " }}New{{/link-to}}
+{{/filtered-list}}
 
 {{outlet}}

@@ -48,8 +48,8 @@ export default Ember.Component.extend({
         if (this.parentRouteName && savedItem) {
           this.container.lookup('controller:application').transitionToRoute(savedItem.get('constructor.modelName'), savedItem);
         }
-      }).catch(() => {
-        this.set('error', true);
+      }).catch((response) => {
+        this.set('error', response&& response.get('Error') || true);
       });
     }
   }

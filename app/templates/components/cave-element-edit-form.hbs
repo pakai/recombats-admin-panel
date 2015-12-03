@@ -26,7 +26,7 @@
 
 <form id='cave-element-edit-form' {{action "save" on="submit"}}>
   {{#if error}}
-    {{error-message}}
+    {{error-message message = error}}
   {{/if}}
   {{#cave-element-edit-form-field item=item field='name' required="required"}}{{/cave-element-edit-form-field}}
   {{#cave-element-edit-form-field item=item field='type' required="required"}}{{/cave-element-edit-form-field}}
@@ -82,7 +82,7 @@
   {{/unless}}
 
   {{#if error}}
-    {{error-message}}
+    {{error-message message = error}}
   {{/if}}
 
     <button class="btn-primary-outline btn">Save</button>

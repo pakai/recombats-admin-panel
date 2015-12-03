@@ -1,6 +1,6 @@
 <h1>Welcome to recombats admin panel</h1>
 
-<h3>Select the page you need:</h3>
+<h3>You can open list of items:</h3>
 
 <ul class="nav">
   <li class="nav-item">
@@ -8,6 +8,17 @@
   </li>
   <li class="nav-item">
     {{#link-to "bots" class="nav-link" }}Bots{{/link-to}}
+  </li>
+</ul>
+
+<h3>Or create new item:</h3>
+
+<ul class="nav">
+  <li class="nav-item">
+    {{#link-to "new-artifact" class="nav-link" }}New artifact{{/link-to}}
+  </li>
+  <li class="nav-item">
+    {{#link-to "new-bot" class="nav-link" }}New bot{{/link-to}}
   </li>
 </ul>
 

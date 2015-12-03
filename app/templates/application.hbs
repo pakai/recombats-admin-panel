@@ -1,13 +1,19 @@
 <nav class="navbar navbar-light bg-faded">
   {{#link-to "index" class="navbar-brand"}}Recombats{{/link-to}}
-  <ul class="nav navbar-nav">
-    <li class="nav-item ">
-      {{#link-to "artifacts" class="nav-link"}}Artifacts{{/link-to}}
-    </li>
-    <li class="nav-item ">
-      {{#link-to "bots" class="nav-link"}}Bots{{/link-to}}
-    </li>
-  </ul>
+    <ul class="nav navbar-nav">
+        <li class="nav-item ">
+          {{#link-to "artifacts" class="nav-link"}}Artifacts{{/link-to}}
+        </li>
+        <li class="nav-item ">
+          {{#link-to "bots" class="nav-link"}}Bots{{/link-to}}
+        </li>
+        <li class="nav-item">
+          {{#link-to "new-artifact" class="nav-link" }}New artifact{{/link-to}}
+        </li>
+        <li class="nav-item">
+          {{#link-to "new-bot" class="nav-link" }}New bot{{/link-to}}
+        </li>
+    </ul>
 </nav>
 <article class="container">
   {{outlet}}

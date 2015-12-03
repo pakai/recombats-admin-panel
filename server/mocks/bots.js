@@ -11,7 +11,8 @@ module.exports = function(app) {
     res
       //.status(201)
       .status(500)
-      .send(Object.assign(items[0], {id: Date.now()}));
+      //.send(Object.assign(items[0], {id: Date.now()}));
+      .send([Object.assign(items[0], {id: Date.now()})]);
   });
 
   botsRouter.get('/:id', function(req, res) {

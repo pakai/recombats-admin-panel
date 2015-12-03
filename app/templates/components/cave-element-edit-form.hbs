@@ -14,7 +14,13 @@
     </li>
 </ol>
 
-<h3>{{item.name}}</h3>
+<h3>
+  {{#if (get item 'name') }}
+    {{item.name}}
+  {{else}}
+      Noname
+  {{/if}}
+</h3>
 
 {{yield}}
 

@@ -42,7 +42,7 @@ export default Ember.Component.extend({
     },
     save() {
       this.item.save().then(savedItem => {
-        if(this.parentRouteName && savedItem){
+        if (this.parentRouteName && savedItem) {
           this.container.lookup('controller:application').transitionToRoute(savedItem.get('constructor.modelName'), savedItem);
         }
       });
